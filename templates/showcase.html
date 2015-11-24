@@ -1,3 +1,36 @@
 <div ng-controller="ShowcaseController">
-  {{username}}
+  <nav class="navbar showcase-navbar navbar-fixed-top">
+    <a class="navbar-brand" href="/#/">Github Showcase</a>
+    <div class="user-section">
+      <div class="user-details">
+        <div class="user-name">{{userDetail.name}}</div>
+        <a class="user-login" href="{{userDetail.githubProfileUrl}}">{{userDetail.username}}</a>
+        <div class="user-profile-info">
+          <span class="user-star">★ 20</span>
+          <span class="user-repo-count"><span class="octicon octicon-repo"></span>44</span>
+        </div>
+      </div>
+      <img class="avatar" src="{{userDetail.avatarUrl}}">
+    </div>
+  </nav>
+  <div class="showcase-content">
+    <div class="center whirly-loader" ng-show="loading">Loading</div>
+    <div ng-show="!loading">
+      <div class="user-repositories" id="user-repos">
+        <div same-height>
+          <div class="col-lg-4 col-md-6 col-sm-8" ng-repeat="repository in userRepositories | orderBy: '-stargazers_count'">
+            <div class="thumbnail">
+              <img class="repo-img" src="">
+              <a class="repo-name" href="{{repository.html_url}}">{{repository.name}}</a>
+              <div class="repo-description">{{repository.description}}</div>
+              <div class="repo-details">
+                <span class="repo-star-count">★ {{repository.stargazers_count}}</span>
+                <span class="repo-forks-count"><span class="octicon octicon-repo-forked"></span>{{repository.forks_count}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

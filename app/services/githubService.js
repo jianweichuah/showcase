@@ -6,13 +6,18 @@ angular.module('showcaseApp.services.github', [])
   function($http, $q) {
     var service = {
       getReposByUsername: function getReposByUsername(username) {
+        var requestUrl = getRequestUrl(username + '/repos');
+        return $http.get(requestUrl);
+      },
+
+      getUserDetails: function getUserDetails(username) {
         var requestUrl = getRequestUrl(username);
-        return $http.get(requestUrl)
+        return $http.get(requestUrl);
       }
     };
 
-    function getRequestUrl(username) {
-      return 'https://api.github.com/users/' + username + '/repos';
+    function getRequestUrl(path) {
+      return 'https://api.github.com/users/' + path;
     }
 
     return service;

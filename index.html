@@ -6,19 +6,18 @@
     <title>GitHub Showcase</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <!-- Angular app files -->
     <script src="app/app.js"></script>
     <script src="app/controllers/mainController.js"></script>
     <script src="app/controllers/showcaseController.js"></script>
     <script src="app/services/githubService.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/octicons/octicons.css">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
   </head>
   <body ng-app="showcaseApp" ng-controller="MainController">
-    <nav class="navbar-fixed-top">
-      <a class="navbar-brand" href="/#/">Github Showcase</a>
-    </nav>
     <div ng-view></div>
   </body>
 </html>
