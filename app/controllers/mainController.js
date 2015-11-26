@@ -6,7 +6,7 @@ angular.module('showcaseApp.controllers.main', ['ngRoute'])
 
   $scope.showcaseUser = function() {
     if ($scope.form.username) {
-      $location.path('/showcase');
+      $location.path('/showcase/' + $scope.form.username);
     }
   };
 });

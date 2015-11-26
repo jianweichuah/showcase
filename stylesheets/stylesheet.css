@@ -51,6 +51,7 @@ hr.fade-end {
   color: #ffffff;
   vertical-align: middle;
   display: table-cell;
+  line-height: 15px;
 }
 
 .user-login {
@@ -58,6 +59,7 @@ hr.fade-end {
 }
 
 .user-profile-info {
+  padding-top: 5px;
   font-size: 14px;
 }
 
@@ -130,7 +132,7 @@ a:hover, a:focus{
 }
 
 @media (max-width: 480px) {
-   .user-details  {
+   .user-name  {
       display: none;
    }
 }

@@ -4,12 +4,11 @@ angular.module('showcaseApp', [
   'showcaseApp.controllers.showcase'
 ])
 .config(['$routeProvider', function($routeProvider) {
-
   $routeProvider
     .when('/', {
       templateUrl: '/templates/main.html'
     })
-    .when('/showcase', {
+    .when('/showcase/:username', {
       templateUrl: '/templates/showcase.html'
     })
     .otherwise({

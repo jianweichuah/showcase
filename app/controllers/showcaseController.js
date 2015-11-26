@@ -65,7 +65,10 @@ angular.module('showcaseApp.controllers.showcase',
     }
 
     function setup() {
-      if (!$scope.form.username) {
+      var urlPath = $location.path().split("/");
+      $scope.form.username = urlPath[urlPath.length - 1];
+      console.log(urlPath);
+      if (urlPath.length != 3 || !$scope.form.username) {
         $location.path('/');
         return;
       }
