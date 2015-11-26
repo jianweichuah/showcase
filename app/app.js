@@ -6,10 +6,10 @@ angular.module('showcaseApp', [
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: '/templates/main.html'
+      templateUrl: 'templates/main.html'
     })
     .when('/showcase/:username', {
-      templateUrl: '/templates/showcase.html'
+      templateUrl: 'templates/showcase.html'
     })
     .otherwise({
       redirectTo: '/'
