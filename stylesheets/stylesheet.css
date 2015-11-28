@@ -135,6 +135,16 @@ a:hover, a:focus{
    .user-name  {
       display: none;
    }
+
+   .input-group.showcase-input {
+     width: 90%;
+   }
+}
+
+@media (max-width: 320px) {
+   .user-details  {
+      display: none;
+   }
 }
 
 @media screen and (min-width: 64em) {

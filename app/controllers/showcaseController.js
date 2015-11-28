@@ -13,7 +13,9 @@ angular.module('showcaseApp.controllers.showcase',
       avatarUrl: "",
       name: "",
       username: "",
-      githubProfileUrl: ""
+      githubProfileUrl: "",
+      repoCount: 0,
+      starCount: 0
     }
 
     $scope.userRepositories = [];
@@ -22,14 +24,26 @@ angular.module('showcaseApp.controllers.showcase',
       $scope.loading = true;
       GithubService.getReposByUsername($scope.form.username)
         .success(function(response) {
-          console.log(response);
+          // console.log(response);
+          // Calculate repo details
+          var repoCount = 0;
+          var starCount = 0;
+          for (var i = 0; i < response.length; i++) {
+            var repo = response[i];
+            repoCount++;
+            starCount += parseInt(repo.stargazers_count);
+          }
+          $scope.userDetail.repoCount = repoCount;
+          $scope.userDetail.starCount = starCount;
+
           $scope.userRepositories = response;
           $scope.loading = false;
           adjustColumnHeights();
         })
         .error(function(response) {
-          console.log("error!");
+          console.log("Problem loading user repo!");
           $scope.loading = false;
+          $scope.loadingError = true;
         });
     }
 
@@ -44,10 +58,11 @@ angular.module('showcaseApp.controllers.showcase',
             $scope.userDetail.username = response.login;
           if (response.html_url)
             $scope.userDetail.githubProfileUrl = response.html_url;
-          console.log(response);
+          // console.log(response);
         })
         .error(function(response) {
-          console.log("error!");
+          console.log("User not found!");
+          $scope.loadingError = true;
           // Show error message: cannot find user
         });
     }
@@ -67,7 +82,6 @@ angular.module('showcaseApp.controllers.showcase',
     function setup() {
       var urlPath = $location.path().split("/");
       $scope.form.username = urlPath[urlPath.length - 1];
-      console.log(urlPath);
       if (urlPath.length != 3 || !$scope.form.username) {
         $location.path('/');
         return;
