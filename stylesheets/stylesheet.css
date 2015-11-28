@@ -13,6 +13,13 @@
     box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
 }
 
+.footer {
+  color: #cccccc;
+  text-align: center;
+  font-size: 11px;
+  padding-bottom: 10px;
+}
+
 hr.fade-end {
   border: 0;
   height: 1px;
@@ -105,6 +112,7 @@ html {
 
 body {
   background-color: transparent; !important
+  position: relative;
 }
 
 a {
@@ -146,16 +154,6 @@ a:hover, a:focus{
       display: none;
    }
 }
-
-@media screen and (min-width: 64em) {
-  .page-header {
-    padding: 5rem 6rem;
-  }
-}
-
-@media screen and (min-width: 42em) and (max-width: 64em) {
-  .page-header {
-    padding: 3rem 4rem; } }
 
 @media screen and (max-width: 42em) {
   .page-header {
