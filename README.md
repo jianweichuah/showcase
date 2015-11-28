@@ -7,6 +7,7 @@ Built with GitHub API and AngularJS.
 ## Running locally
 1. Fork the repo
 2. Install [jekyll](http://jekyllrb.com/docs/installation/)
-3. cd into showcase folder and run `jekyll serve`
+3. Comment out `<base href="/showcase/">` in [index.html](https://github.com/jianweichuah/showcase/blob/gh-pages/index.html)
+4. cd into showcase folder and run `jekyll serve`
 
 Feel free to add new features!
