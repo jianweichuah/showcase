@@ -43,6 +43,7 @@ hr.fade-end {
 
 .repo-description {
   padding: 5px;
+  word-wrap: break-word;
 }
 
 .user-section {
