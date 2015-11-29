@@ -2,6 +2,8 @@
 
 http://www.jianweichuah.com/showcase
 
+Example: http://www.jianweichuah.com/showcase/#/showcase/twitter
+
 Built with GitHub API and AngularJS.
 
 
