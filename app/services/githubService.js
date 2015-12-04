@@ -6,18 +6,28 @@ angular.module('showcaseApp.services.github', [])
   function($http, $q) {
     var service = {
       getReposByUsername: function getReposByUsername(username) {
-        var requestUrl = getRequestUrl(username + '/repos');
+        var requestUrl = getRequestUrl('users/' + username + '/repos');
         return $http.get(requestUrl);
       },
 
       getUserDetails: function getUserDetails(username) {
-        var requestUrl = getRequestUrl(username);
+        var requestUrl = getRequestUrl('users/' + username);
+        return $http.get(requestUrl);
+      },
+
+      getLanguagesByRepo: function getLanguagesByRepo(owner, repo) {
+        var requestUrl = getRequestUrl('/repos/' + owner + '/' + repo + '/languages');
+        return $http.get(requestUrl);
+      },
+
+      getFollowersByUsername: function getFollowersByUsername(username) {
+        var requestUrl = getRequestUrl('users/' + username + '/followers');
         return $http.get(requestUrl);
       }
     };
 
     function getRequestUrl(path) {
-      return 'https://api.github.com/users/' + path;
+      return 'https://api.github.com/' + path;
     }
 
     return service;

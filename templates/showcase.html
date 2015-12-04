@@ -16,6 +16,13 @@
   <div class="showcase-content">
     <div class="center whirly-loader" ng-show="loading">Loading</div>
 
+    <!-- Followers map -->
+    <div ng-show="!loading && !loadingError">
+      <div class="container" id="map-container">
+        <div class="map"></div>
+      </div>
+    </div>
+
     <!-- Repo content -->
     <div ng-show="!loading">
       <div class="user-repositories" id="user-repos">

@@ -20,6 +20,10 @@
   padding-bottom: 10px;
 }
 
+.map {
+  padding-bottom: 20px;
+}
+
 hr.fade-end {
   border: 0;
   height: 1px;
@@ -147,6 +151,12 @@ a:hover, a:focus{
 
    .input-group.showcase-input {
      width: 90%;
+   }
+
+   .showcase-content {
+     margin-top: 100px;
+     margin-left: 10px;
+     margin-right: 10px;
    }
 }
 
