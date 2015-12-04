@@ -159,7 +159,7 @@ angular.module('showcaseApp.controllers.showcase', [
       populateUserDetails();
       populateReposForUser();
       showFollowersMap();
-      populateMapWithFollowers();
+      // populateMapWithFollowers();
     };
 
     setup();
