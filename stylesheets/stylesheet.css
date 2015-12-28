@@ -17,11 +17,31 @@
   text-align: center;
 }
 
+.mapTooltip {
+  position : fixed;
+  background-color : #fff;
+  moz-opacity:0.70;
+  opacity: 0.70;
+  filter:alpha(opacity=70);
+  border-radius:10px;
+  padding : 10px;
+  z-index: 1000;
+  max-width: 200px;
+  display:none;
+  color:#343434;
+}
+
 .footer {
   color: #cccccc;
   text-align: center;
   font-size: 11px;
   padding-bottom: 10px;
+}
+
+.footer a:link, .footer a:visited {
+  text-decoration: inherit;
+  color: inherit;
+  opacity: 1;
 }
 
 .map {
@@ -161,6 +181,10 @@ a:hover, a:focus{
      margin-top: 100px;
      margin-left: 10px;
      margin-right: 10px;
+   }
+
+   #map-container {
+     display: none;
    }
 }
 
