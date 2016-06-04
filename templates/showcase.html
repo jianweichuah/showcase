@@ -6,8 +6,9 @@
         <div class="user-name">{{userDetail.name}}</div>
         <a class="user-login" href="{{userDetail.githubProfileUrl}}">{{userDetail.username}}</a>
         <div class="user-profile-info">
-          <span class="user-star">★ {{userDetail.starCount}}</span>
-          <span class="user-repo-count"><span class="octicon octicon-repo"></span>{{userDetail.repoCount}}</span>
+          <span class="user-star" title="stars">★ {{userDetail.starCount}}</span>
+          <span class="user-repo-count"><span class="octicon octicon-repo" title="repos"></span>{{userDetail.repoCount}}</span>
+          <span class="user-follower-count"><span class="octicon octicon-octoface" title="followers"></span>{{userDetail.followerCount}}</span>
         </div>
       </div>
       <img class="avatar" src="{{userDetail.avatarUrl}}">
